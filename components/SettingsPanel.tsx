@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { X, Lock, ShieldCheck, Cloud, Download, Upload, Share2, Info, Settings as SettingsIcon, Database, Link } from 'lucide-react';
-import { AppSettings, Expense } from '../types';
-import { supabase, TABLE_NAME } from '../lib/supabase';
+import { AppSettings, Expense } from '../types.ts';
+import { supabase, TABLE_NAME } from '../lib/supabase.ts';
 
 interface SettingsPanelProps {
   settings: AppSettings;
