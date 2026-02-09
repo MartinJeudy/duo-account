@@ -1,12 +1,19 @@
 
+[build]
+  # Puisque vous avez tout déplacé à la racine, on publie le dossier courant
+  publish = "."
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[build]
-  publish = "."
+[[headers]]
+  for = "/*.tsx"
+  [headers.values]
+    Content-Type = "application/javascript"
 
-[headers]
-  [[headers.values]]
-    Access-Control-Allow-Origin = "*"
+[[headers]]
+  for = "/*.ts"
+  [headers.values]
+    Content-Type = "application/javascript"
