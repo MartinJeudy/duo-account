@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Plus, 
@@ -15,14 +14,14 @@ import {
   Wifi,
   WifiOff
 } from 'lucide-react';
-import { Expense, User, Category, AppSettings } from './types';
-import ExpenseForm from './components/ExpenseForm';
-import ExpenseItem from './components/ExpenseItem';
-import SummaryCard from './components/SummaryCard';
-import CategoryChart from './components/CategoryChart';
-import SettingsPanel from './components/SettingsPanel';
-import LockScreen from './components/LockScreen';
-import { supabase, TABLE_NAME } from './lib/supabase';
+import { Expense, User, Category, AppSettings } from './types.ts';
+import ExpenseForm from './components/ExpenseForm.tsx';
+import ExpenseItem from './components/ExpenseItem.tsx';
+import SummaryCard from './components/SummaryCard.tsx';
+import CategoryChart from './components/CategoryChart.tsx';
+import SettingsPanel from './components/SettingsPanel.tsx';
+import LockScreen from './components/LockScreen.tsx';
+import { supabase, TABLE_NAME } from './lib/supabase.ts';
 
 const App: React.FC = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
@@ -96,7 +95,6 @@ const App: React.FC = () => {
 
   useEffect(() => {
     localStorage.setItem('duo_settings', JSON.stringify(settings));
-    // Cache current expenses locally as backup
     if (expenses.length > 0) {
       localStorage.setItem('duo_expenses', JSON.stringify(expenses));
     }
